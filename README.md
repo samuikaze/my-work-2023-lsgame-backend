@@ -1,6 +1,6 @@
 # 洛嬉遊戲 LSGames 後端專案
 
-> [返回根目錄](../../README.md)
+> [返回根目錄](https://github.com/samuikaze/my-work-2023)
 
 這是洛嬉遊戲的後端專案，使用 Lumen Framework (PHP) 撰寫而成
 
