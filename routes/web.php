@@ -18,6 +18,7 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/news', 'NewsController@getNewsList');
     // 取得消息內容
     $router->get('/news/{id}', 'NewsController@getNews');
+    $router->post('/news/create', 'NewsController@createNews');
     // 取得作品清單
     $router->get('/products', 'ProductController@getProductList');
     // 取得商品列表
@@ -38,6 +39,8 @@ $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->get('/forums/boards/{board_id}/posts/{post_id}/replies/{reply_id}', 'ForumController@getReplyById');
     // 取得所有文章種類
     $router->get('/forums/commons/post/types', 'ForumController@getPostTypeList');
+    // 取得系統變數值
+    $router->get('/system/variables', 'SystemVariableController@getSystemVariables');
     // 需要經過驗證的路由
     $router->group(['middleware' => ['verify.auth']], function () use ($router) {
         // 清除購物車

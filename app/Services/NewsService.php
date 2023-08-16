@@ -102,7 +102,7 @@ class NewsService
             'content' => $content,
         ];
 
-        $this->news_repository->safeUpdateRecord($id, $data);
+        $this->news_repository->safeUpdate($id, $data);
     }
 
     /**
@@ -113,6 +113,6 @@ class NewsService
      */
     public function deleteNews(int $id): void
     {
-        $this->news_repository->deleteRecord($id);
+        $this->news_repository->delete($id);
     }
 }

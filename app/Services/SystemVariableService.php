@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\SystemVariableRepository;
+use Illuminate\Support\Collection;
 
 class SystemVariableService
 {
@@ -23,5 +24,16 @@ class SystemVariableService
         SystemVariableRepository $system_variable_repository
     ) {
         $this->system_variable_repository = $system_variable_repository;
+    }
+
+    /**
+     * 取得系統變數值
+     *
+     * @param string $type 系統變數種類
+     * @return \Illuminate\Support\Collection
+     */
+    public function getSystemVariables(string $type): Collection
+    {
+        return $this->system_variable_repository->getSystemVariables($type);
     }
 }
